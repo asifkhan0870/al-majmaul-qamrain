@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>شاعری کی محفل - All My Sher Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #8b4513;
+        --secondary: #daa520;
+        --accent: #cd853f;
+        --bg-primary: #fff8e7;
+        --bg-secondary: #f5e6d3;
+        --text-primary: #2c1810;
+        --text-secondary: #5d4e37;
+        --border-color: #d4af37;
+        --shadow: rgba(139, 69, 19, 0.15);
+      }
+
+      body {
+        font-family: "Noto Nastaliq Urdu", "Amiri", serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 2;
+        overflow-x: hidden;
+      }
+
+      /* Decorative Background Pattern */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 100px,
+            rgba(212, 175, 55, 0.02) 100px,
+            rgba(212, 175, 55, 0.02) 200px
+          ),
+          repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 100px,
+            rgba(139, 69, 19, 0.02) 100px,
+            rgba(139, 69, 19, 0.02) 200px
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Header with Classical Design */
+      header {
+        position: relative;
+        background: linear-gradient(135deg, var(--primary) 0%, #6b3410 100%);
+        padding: 4rem 2rem 3rem;
+        text-align: center;
+        border-bottom: 5px solid var(--secondary);
+        box-shadow: 0 10px 40px var(--shadow);
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "❦";
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3rem;
+        color: var(--secondary);
+        opacity: 0.3;
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--secondary) 0px,
+          var(--secondary) 20px,
+          transparent 20px,
+          transparent 40px
+        );
+      }
+
+      h1 {
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--bg-primary);
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+        animation: fadeInDown 1s ease-out;
+      }
+
+      .subtitle {
+        font-family: "Crimson Text", serif;
+        font-size: 1.2rem;
+        color: var(--secondary);
+        font-style: italic;
+        animation: fadeInUp 1s ease-out 0.3s backwards;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Navigation and Controls */
+      .controls {
+        position: relative;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .search-box {
+        position: relative;
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
+      }
+
+      .search-box input {
+        width: 100%;
+        padding: 1rem 3rem 1rem 1.5rem;
+        border: 2px solid var(--border-color);
+        border-radius: 50px;
+        background: white;
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-size: 1.1rem;
+        color: var(--text-primary);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .search-box input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 6px 25px rgba(139, 69, 19, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .search-box::after {
+        content: "🔍";
+        position: absolute;
+        left: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+      }
+
+      .filter-buttons {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .filter-btn {
+        padding: 0.8rem 1.8rem;
+        border: 2px solid var(--primary);
+        background: white;
+        color: var(--primary);
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .filter-btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: var(--primary);
+        transition: width 0.4s ease, height 0.4s ease;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+
+      .filter-btn:hover::before,
+      .filter-btn.active::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        color: white;
+        border-color: var(--primary);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px var(--shadow);
+      }
+
+      /* Main Container */
+      .container {
+        position: relative;
+        max-width: 1400px;
+        margin: 3rem auto;
+        padding: 0 2rem 4rem;
+        z-index: 10;
+      }
+
+      /* Poetry Grid */
+      .poetry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        gap: 2.5rem;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Poetry Card */
+      .poetry-card {
+        background: white;
+        border: 3px solid var(--border-color);
+        border-radius: 15px;
+        padding: 2.5rem;
+        position: relative;
+        transition: all 0.4s ease;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        animation: slideUp 0.6s ease-out backwards;
+      }
+
+      .poetry-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .poetry-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .poetry-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .poetry-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .poetry-card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .poetry-card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .poetry-card::before {
+        content: "❋";
+        position: absolute;
+        top: -15px;
+        right: 50%;
+        transform: translateX(50%);
+        font-size: 2rem;
+        color: var(--secondary);
+        background: white;
+        padding: 0 10px;
+      }
+
+      .poetry-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 50px rgba(139, 69, 19, 0.2);
+        border-color: var(--accent);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--bg-secondary);
+      }
+
+      .poet-name {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .poetry-type {
+        background: linear-gradient(135deg, var(--accent), var(--secondary));
+        color: white;
+        padding: 0.4rem 1.2rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .poetry-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .poetry-content {
+        font-size: 1.6rem;
+        line-height: 2.5;
+        color: var(--text-primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .couplet {
+        margin-bottom: 1.8rem;
+        padding: 1rem;
+        border-right: 4px solid var(--accent);
+        background: linear-gradient(
+          to left,
+          rgba(218, 165, 32, 0.05),
+          transparent
+        );
+        border-radius: 0 8px 8px 0;
+        transition: all 0.3s ease;
+      }
+
+      .couplet:hover {
+        background: linear-gradient(
+          to left,
+          rgba(218, 165, 32, 0.1),
+          transparent
+        );
+        transform: translateX(-5px);
+      }
+
+      .line {
+        padding: 0.3rem 0;
+      }
+
+      .card-footer {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+        padding-top: 1rem;
+        border-top: 2px solid var(--bg-secondary);
+      }
+
+      .action-btn {
+        padding: 0.6rem 1.2rem;
+        border: none;
+        background: var(--secondary);
+        color: white;
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .action-btn:hover {
+        background: var(--primary);
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Audio Player */
+      .audio-player {
+        display: none;
+        margin-top: 1rem;
+        padding: 1rem;
+        background: var(--bg-secondary);
+        border-radius: 10px;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .audio-player.active {
+        display: flex;
+      }
+
+      .audio-player audio {
+        flex: 1;
+        height: 40px;
+      }
+
+      /* Share Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 3rem;
+        border-radius: 20px;
+        max-width: 600px;
+        width: 90%;
+        text-align: center;
+        border: 4px solid var(--border-color);
+        animation: scaleIn 0.3s ease;
+        position: relative;
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .modal-content h3 {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .share-text {
+        background: var(--bg-secondary);
+        padding: 2rem;
+        border-radius: 10px;
+        font-size: 1.4rem;
+        line-height: 2.2;
+        margin-bottom: 1.5rem;
+        border: 2px solid var(--border-color);
+      }
+
+      .share-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: var(--primary);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .close-modal:hover {
+        background: var(--secondary);
+        transform: rotate(90deg);
+      }
+
+      /* No Results Message */
+      .no-results {
+        text-align: center;
+        padding: 4rem 2rem;
+        font-size: 1.5rem;
+        color: var(--text-secondary);
+        display: none;
+      }
+
+      .no-results.active {
+        display: block;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .poetry-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .controls {
+          flex-direction: column;
+        }
+
+        .search-box {
+          max-width: 100%;
+        }
+
+        .poetry-content {
+          font-size: 1.3rem;
+        }
+      }
+
+      /* Loading Animation */
+      .loading {
+        text-align: center;
+        padding: 4rem;
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      .loading::after {
+        content: "...";
+        animation: dots 1.5s infinite;
+      }
+
+      @keyframes dots {
+        0%,
+        20% {
+          content: ".";
+        }
+        40% {
+          content: "..";
+        }
+        60%,
+        100% {
+          content: "...";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>المجمع القمرین من اشعار اجمل السطرین</h1>
+      <p class="subtitle">All My Shers Collection (Asif Khan)</p>
+    </header>
+
+    <div class="controls">
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="شاعر، عنوان یا الفاظ تلاش کریں..."
+        />
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">تمام</button>
+        <button class="filter-btn" data-filter="ghazal">غزل</button>
+        <button class="filter-btn" data-filter="nazm">نظم</button>
+        <button class="filter-btn" data-filter="sher">شعر</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="poetry-grid" id="poetryGrid"></div>
+      <div class="no-results" id="noResults">کوئی نتیجہ نہیں ملا</div>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="modal" id="shareModal">
+      <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">×</button>
+        <h3>شئیر کریں</h3>
+        <div class="share-text" id="shareText"></div>
+        <div class="share-buttons">
+          <button class="action-btn" onclick="copyToClipboard()">
+            📋 کاپی کریں
+          </button>
+          <button class="action-btn" onclick="shareOnWhatsApp()">
+            📱 WhatsApp
+          </button>
+          <button class="action-btn" onclick="shareOnTwitter()">
+            🐦 Twitter
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Sample Data Structure - Replace with your actual poetry
+      let poetryData = [
+        {
+          id: 1,
+          type: "ghazal",
+          poet: " آصف خان علیگ ",
+          title: "اے اہلِ بشیر تم کچھ تو خدا کا خوف کرو",
+          couplets: [
+            {
+              lines: [
+                "چلو اچھا ہوا کہ وہ بات تمہارے سامنے آ گئی",
+                "چلو اچھا ہوا کہ لوگوں نے فتووں سے اجتناب کی",
+              ],
+            },
+            {
+              lines: [
+                "اے اہلِ بشیر تم کچھ تو خدا کا خوف کرو",
+                "پکڑے نہ جائے وہ جو بشارت سنا رہے ہیں عذاب کی",
+              ],
+            },
+
+            {
+              lines: [
+                "اس میں کیا شک ہے کہ چھپ جاتا ہے ہر گناہ",
+                "جس نے بھی اس دنیا میں خود پر ظاہری حجاب کی",
+              ],
+            },
+            {
+              lines: [
+                "مت پوچھ اس یومِ جزا کا منظر ہم سے اے سائل",
+                "کھل جائے گا پول کل قیامت میں ہر اہلِ شباب کی",
+              ],
+            },
+            {
+              lines: [
+                "مل جائے گا ہر اُس شخص کو مکمل جزا وہاں",
+                "جب رکھا جائے گا کتاب ان کے سامنے حساب کی",
+              ],
+            },
+            {
+              lines: [
+                "چاک ہوگا ہر منافق کا پردۂ وجۂ پوری طرح",
+                " دیکھ جائے گا سرِ گناہ ہر اہلِ نقاب کی",
+              ],
+            },
+            {
+              lines: [
+                "ان کا بھی تو حال خوب دیکھنے والا ہوگا",
+                "جب لگام ڈالی جائے گی گلے میں کچھ اہلِ خطاب کی",
+              ],
+            },
+
+            {
+              lines: [
+                "ان کا بھی تو حشر کیا کچھ اَنعام سے کم ہوگا",
+                "جن کا عمل میں مماثلت ہے اہلِ کتاب کی",
+              ],
+            },
+            {
+              lines: [
+                "کیا خوب فوز کا منظر ہوگا کتنا حسین ہوگا وہ",
+                "جو فرد ہوں گے یدِ آدم کے انتخاب کی",
+              ],
+            },
+            {
+              lines: [
+                "اے زاہد تو کیا کرے گا تیرے دامن میں ادعاء سے کچھ بھی نہیں",
+                "تم نے کیا کچھ نہیں، کیا کیا نہیں چھپ کر گناہ کی",
+              ],
+            },
+            {
+              lines: [
+                "اے آصف کیا کہے گا تو سوائے اس بات کے",
+                "اے رب، کھڑا کرنا تو صف میں مجھ کو اہلِ رباب کی",
+              ],
+            },
+          ],
+          audioUrl: null,
+        },
+        {
+    id: 2,
+    type: "ghazal",
+    poet: " آصف خان علیگ ",
+    title: "کبھی جو سوچتا ہوں میں اس دورِ جہالت میں",
+    couplets: [
+      {
+        lines: [
+          "کبھی جو سوچتا ہوں میں اس دورِ جہالت میں",
+          "حاملِ علم اب کہاں اور کون ہے اس دین کے پاسباں",
+        ],
+      },
+      {
+        lines: [
+          "مہکتا نہیں ہے کوئی گل کی اب خوشبو مجھے",
+          "اب کیوں نہیں ملتا مجھے کوئی ایسا گلستاں ؟",
+        ],
+      },
+      {
+        lines: [
+          "کہ دوں ہر ایک بات دل کھول کر میں مگر",
+          "اب نہیں ملتا مجھ کو کوئی ایسا رازداں",
+        ],
+      },
+      {
+        lines: [
+          "ایک دور وہ بھی رہا تھا کبھی اس قوم کا اے زاہد",
+          "لگتا نہیں اب خدا ہے ان پر کوئی مہرباں",
+        ],
+      },
+      {
+        lines: [
+          "عجب تماشا ہے عجب دور ہے اس قومِ مسلم کا",
+          "کہا جا رہا ہے یہ سفینا، کہا جا رہا ہے یہ کارواں",
+        ],
+      },
+      {
+        lines: [
+          "آخر اس قوم میں اتنی جہالت کہاں سے آئی؟",
+          "کہا چلے گئے ہیں اس امت کے اہلِ قرآں",
+        ],
+      },
+      {
+        lines: [
+          "مجھ سے اس قوم کی پستی کا عالم کیا پوچھتے ہو آصف",
+          "ٹھہر جاتا ہے وہ غدار یہاں جو دین کا ہے نگراں",
+        ],
+      },
+    ],
+    audioUrl: null,
+  },
+  {
+    id: 3,
+    type: "nazm",
+    poet: " آصف خان علیگ ",
+    title: "یہ یزیدی حامی کیا سمجھیں گے ان پاک ہستیوں کو",
+    couplets: [
+      {
+        lines: [
+          "یہ یزیدی حامی کیا سمجھیں گے ان پاک ہستیوں کو",
+          "جو فہمِ قرآن تھا وہ اہلِ بیت نے سب کو سمجھا دیا",
+        ],
+      },
+      {
+        lines: [
+          "اے ناظر ذرا دیکھوں تو ان کی بدبختی کا عالم",
+          "مدافع ہے ان کے جنہوں نے قرآن و سنت کو بھولا دیا",
+        ],
+      },
+      {
+        lines: [
+          "ان ظالموں سے کہہ دوں ان اہلِ دغا سے کہہ دوں",
+          "کفرِ یزید کی دفاع کر کے اسلام کے کون سے بنیاد کو بچا لیا؟",
+        ],
+      },
+      {
+        lines: [
+          "جو اولادِ نبی کے نہ ہوئے وہ کیا ہوں گے تمہارے کبھی",
+          "جن کے در سے ملی رشد و ہدایت انہیں بھی قتل کر دیا",
+        ],
+      },
+      {
+        lines: [
+          "کبھی تو ہنسی آتی ہے ان یزیدیوں کے حال پر مجھے",
+          "کہ ربِ کائنات نے ان کو کس کام پر لگا دیا",
+        ],
+      },
+      {
+        lines: [
+          "جن کی چوکھٹ سے بٹتی ہے رشد و ہدایت",
+          "ظالموں تم نے ان ہستیوں کی طرف امکانِ خطا کیا؟",
+        ],
+      },
+      {
+        lines: [
+          "لعنت برستی ہے ان پر اور تا قیامت تک برستی رہے گی",
+          "جس نے کبھی بھی یزید و شمر کا ساتھ دیا",
+        ],
+      },
+      {
+        lines: [
+          "جس کی بغاوت پر نصِ صریح ہے تمہارے پاس",
+          "اس شخص کا تم نے کس دل زوری سے دفاع کیا؟",
+        ],
+      },
+      {
+        lines: [
+          "تمہیں تو وہ قول یاد ہوگا نہ ابنِ سیرین کا، بلفرض",
+          "سیرین تم قاتلِ حسین میں شامل تھے، یہ تم نے کیا کیا؟",
+        ],
+      },
+      {
+        lines: [
+          "جو باغی و طاغی ہے نصِ صریح کے ساتھ",
+          "اس کا دفاع کر کے تم نے کیا حاصل کر لیا؟",
+        ],
+      },
+      {
+        lines: [
+          "تم کہتے ہو ہم تو مدافع ہیں صحابہ کے ہر حال میں",
+          "تو پھر کیوں تم نے حسنین کی طرف امکانِ خطا کیا؟",
+        ],
+      },
+      {
+        lines: [
+          "تم یزیدِ لعین پر سلام بھیجتے ہو مجھے کوئی گلہ نہیں مگر",
+          "پھر کیوں تم نے اہلِ بیت پر سلام کو ممنوع کیا؟",
+        ],
+      },
+      {
+        lines: [
+          "تم جھوٹ بولتے ہو اپنے نبی پر کیا تم جھجکتے بھی نہیں",
+          "گر پوچھ لی کل حشر میں جو تم سے کہ تم نے یہ کیا کیا؟",
+        ],
+      },
+      {
+        lines: [
+          "جب ان کی کرتوتیں کھولتی گئی تمہارے سامنے تاریخ سے",
+          "تم تو بات سے نہیں بلکہ تم نے تو علمِ تاریخ کا ہی انکار کر دیا",
+        ],
+      },
+      {
+        lines: [
+          "کیا کسی قوم کی بقا رہ سکتی ہے بھلا بغیر تاریخ کے؟",
+          "جاہلوں یہ علم تم نے کہاں سے حاصل کر لیا؟",
+        ],
+      },
+      {
+        lines: [
+          "تم کہتے ہو بہت فہم ہے قرآن کا ہمیں",
+          "تو کہ دو نہ وہ سب غلط تھا جو کچھ امامِ علی نے کیا",
+        ],
+      },
+      {
+        lines: [
+          "تمہیں کہاں ہوگا کبھی دین و قرآن میں عبور",
+          "جنہیں جب مس ہی شیطان نے کر لیا",
+        ],
+      },
+      {
+        lines: [
+          "چھوڑو رہنے دو کیا بحث کرو گے تم دینداری پر",
+          "دفاع کے لیے دین دار کو چھوڑ کر تم نے دنیا دار جب چن لیا",
+        ],
+      },
+      {
+        lines: [
+          "خوش ہو جا اے آصف! تُو مسلمان ہے اس دورِ فتن میں بھی",
+          "یہ سعادت کہ رب نے تجھے اہلِ بیت کی دفاع کے لیے چُن لیا",
+        ],
+      },
+    ],
+    audioUrl: null,
+  },
+  {
+    id: 4,
+    type: "ghazal",
+    poet: " آصف خان علیگ ",
+    title: "لگتا تو نہیں ہے اُنہیں اپنی عزت کا خیال ہے اب",
+    couplets: [
+      {
+        lines: [
+          "لگتا تو نہیں ہے اُنہیں اپنی عزت کا خیال ہے اب",
+          "تو کچھ ایسا نہ کر کہ اُن کی عزت نیلام ہو جائے",
+        ],
+      },
+      {
+        lines: [
+          "حُکم یہی ہے خدا کا اور منشا بھی یہی ہے",
+          "پردہ پوشی کر اُن کے عیب، وہ شخص کہیں بدنام نہ ہو جائے",
+        ],
+      },
+      {
+        lines: [
+          "وہ الگ بات ہے خاموش ہوں بجز کچھ راز کے",
+          "کیا خبر، اِس گنہگار کا اسی سے مغفرت کا کام ہو جائے",
+        ],
+      },
+      {
+        lines: [
+          "میں اپنے ہی بنائے ہوئے اصولوں کو توڑ دیتا ہوں",
+          "شاید کبھی اس شخص کو اس کا احساس ہو جائے",
+        ],
+      },
+      {
+        lines: [
+          "یہ محبت، یہ وعدے، یہ عہد و پیمان، یہ قربانی",
+          "قائل کے لفظ ہیں بس، تاآنکہ اس کا کام ہو جائے",
+        ],
+      },
+      {
+        lines: [
+          "بہت ظالم ہے یہ دنیا، اے صنفِ نازک تمہیں خبر نہیں",
+          "لے کر تیرے گُلِ حُسن، کہیں وہ شخص گمنام نہ ہو جائے",
+        ],
+      },
+      {
+        lines: [
+          "یہ دنیا بھی عارضی ہے، یہ حسن بھی عارضی ہے",
+          "اتنی غفلت ٹھیک نہیں، اتنا بھی تو خود سے کوئی انجان نہ ہو جائے",
+        ],
+      },
+      {
+        lines: [
+          "میں مخل نہیں ہوتا تمہاری اشتراکیت میں مگر",
+          "حلال ہوتا یہ امر تو کیا مجال کہ سوال ہو جائے",
+        ],
+      },
+      {
+        lines: [
+          "یہ دنیا آزمائش کی جگہ ہے، جنت نہیں ہے یہ",
+          "کچھ تو خیال کر حدودِ شریعت کہیں پامال نہ ہو جائے",
+        ],
+      },
+      {
+        lines: [
+          "کیا نصیحت کروں آصف اور کس رشتے سے کروں",
+          "یہ سن کر کہیں وہ شخص ہم ہی سے بیزار نہ ہو جائے",
+        ],
+      },
+    ],
+    audioUrl: null,
+  },
+  {
+    id: 5,
+    type: "ghazal",
+    poet: " آصف خان علیگ ",
+    title: "بہت نعمتوں سے نوازا ہے رب نے مجھے مگر",
+    couplets: [
+      {
+        lines: [
+          "بہت نعمتوں سے نوازا ہے رب نے مجھے مگر",
+          "ان سب نعمتوں پر بھاری تم ایک نعمت ہو",
+        ],
+      },
+      {
+        lines: [
+          "میں کافرِ نعمت ہوں کیسے سنبھالوں گا تمہیں",
+          "ادائگیِ سنت میں کہیں نہ مجھ سے یہ گناہ سرزد ہو",
+        ],
+      },
+      {
+        lines: [
+          "میں غلو کے مخالف رہا ہوں ہمیشہ سے",
+          "چھوڑوں سب اصول آج، غلو کرنے دوں",
+        ],
+      },
+      {
+        lines: [
+          "ایسا نہیں ہے کہ تمہارا چہرہ نیا ہے مجھے",
+          "تم وہی میری قدیمِ خواب کی ایک تعبیر ہو",
+        ],
+      },
+      {
+        lines: [
+          "کیوں تمثیل دوں تمہاری چاند سے میں",
+          "تم تو اس سے بھی کہیں خوبصورت ہو",
+        ],
+      },
+      {
+        lines: [
+          "بہت سوال ہوں گے تمہارے ذہن میں مگر",
+          "صبر کرو اور مجھے کچھ مدت مہلت دو",
+        ],
+      },
+      {
+        lines: [
+          "یہ شبِ وصل اتنا حجاب کا تکلف کیوں؟",
+          "اب تو میری جان خود کو اس سے راحت دو",
+        ],
+      },
+      {
+        lines: [
+          "کیا یہ ممکن نہیں کہ جنبشِ لب کو تم تکلف دو",
+          "دلکش نظارہ ہوگا جب تم کہو، ہمیں بھی تو کچھ کہنے دو",
+        ],
+      },
+      {
+        lines: [
+          "میں کتنا خوش ہوں اندر سے تمہیں ابھی خبر نہیں",
+          "اب بول بھی دو تم بھی کچھ تو یہ خوشی دوبالا ہو",
+        ],
+      },
+      {
+        lines: [
+          "میں اسے دیکھوں کہ اسے پیار کروں آصف",
+          "اب تم ہی اے میری جان کوئی مشورت دو",
+        ],
+      },
+    ],
+    audioUrl: null,
+  },
+  {
+    id: 6,
+    type: "ghazal",
+    poet: " آصف خان علیگ ",
+    title: "تم آ کر چلے بھی گئے اور ملے بھی نہیں مجھ سے",
+    couplets: [
+      {
+        lines: [
+          "تم آ کر چلے بھی گئے اور ملے بھی نہیں مجھ سے",
+          "اتنی محبت کرتے ہو مجھ سے، مجھے معلوم نہ تھا",
+        ],
+      },
+      {
+        lines: [
+          "تمہارا ذکر کیا کرتا تھا میں حلقۂ احباب میں اکثر",
+          "کہہ دوں گا اب ان سے کہ اسے میرے قیام کی خبر نہ تھا",
+        ],
+      },
+      {
+        lines: [
+          "ایسا نہیں ہے کہ اُس سے اب میرا رابطہ نہیں",
+          "بس یہ ہے کہ اس حرکت کا مجھے امکان نہ تھا",
+        ],
+      },
+      {
+        lines: [
+          "چلو اچھا ہوا کہ تم نے کچھ تو منتخب کیا",
+          "بلاوجہ ایک شخص خیال و خام میں تھا",
+        ],
+      },
+      {
+        lines: [
+          "تمہاری موجودگی ہمیں معلوم ہوئی تمہاری خوشبو سے",
+          "اچھا ہوا کہ انجمن میں خوشبو کا انتظام نہ تھا",
+        ],
+      },
+      {
+        lines: [
+          "بلاوجہ اپنی زبان کو کیوں تکلّف دیتے ہو تم",
+          "کہہ دیتے صاف ہم سے، ہمیں کسی کا انتظار نہ تھا",
+        ],
+      },
+      {
+        lines: [
+          "میں اُس وقت سے اس مسجد کا آباد کرنے والا ہوں",
+          "جب اس مسجد کا کوئی بھی امام نہ تھا",
+        ],
+      },
+      {
+        lines: [
+          "اب کیا فائدہ تم سے گِلہ کر کے مجھے",
+          "کہہ دو گے تم، کہ ملنے کا کوئی التزام نہ تھا",
+        ],
+      },
+      {
+        lines: [
+          "وہ اتنی صفائی سے جھوٹ کہتا رہا کہ بس",
+          "ایسا لگتا ہے کہ خدا پر اُس کا کوئی ایمان نہ تھا",
+        ],
+      },
+      {
+        lines: [
+          "وہ چپ ہو بھی جاتا تو آصف، مجھے صبر آتا مگر",
+          "اُس کے جملوں میں سچ کا ایک بھی بیان نہ تھا",
+        ],
+      },
+    ],
+    audioUrl: null,
+  },
+  {
+    id: 7,
+    type: "ghazal",
+    poet: " آصف خان علیگ ",
+    title: "پہلِ پہل تو تجھ سے رشتہ عدو کا تھا",
+    couplets: [
+      {
+        lines: [
+          "پہلِ پہل تو تجھ سے رشتہ عدو کا تھا",
+          "رفتہ رفتہ پتا نہیں کیسے محبت میں ڈھل گیا",
+        ],
+      },
+      {
+        lines: [
+          "چلتا رہا سفر میں جو جانا تھا ہی تھا اتنا دور",
+          "راستہ تھا طویل مگر تیری یادوں میں کٹ گیا",
+        ],
+      },
+      {
+        lines: [
+          "بہت مصائب ملے ہیں ہمیں اس دنیا میں مگر",
+          "تجھ سے بچھڑنے پر وہ سب کم پڑ گیا",
+        ],
+      },
+      {
+        lines: [
+          "کیا پتا تم کہاں ہوگے کیا کر رہے ہوگے آج کل",
+          "ضبط نہ کر پایا غم بس بے ساختہ کہہ گیا",
+        ],
+      },
+      {
+        lines: [
+          "کیا ایسا نہیں کہ تم ایک احسان کرو مجھ پر",
+          "کل آخرت میں کہنا میں سب و شتم معاف کر گیا",
+        ],
+      },
+      {
+        lines: [
+          "کیا خبر تھا کہ اس حد تک یہ حاوی ہوگا",
+          "ایک نظر کا ملنا مجھ کو تو برباد کر گیا",
+        ],
+      },
+      {
+        lines: [
+          "بہت کوششوں کے بعد مشغول ہوا ہوں میں",
+          "یہ بھی جمیل کام برباد، تیرا خیال کر گیا",
+        ],
+      },
+      {
+        lines: [
+          "تکمیل کر چکا ہوں کتنی بار مقدس کتاب",
+          "یہ لا علاج مرض میرا برا حال کر گیا",
+        ],
+      },
+      {
+        lines: [
+          "گلہ تجھ سے ہے اے رب اے قادرِ مطلق",
+          "تیرے ہوتے ہوئے بھی وہ کیا کچھ نہ کر گیا",
+        ],
+      },
+      {
+        lines: [
+          "بہت ملے اور ایک سے بڑھ کر ایک مگر آصف",
+          "اس کا نہ ملنے کا غم مجھے ملال کر گیا",
+        ],
+      },
+    ],
+    audioUrl: null,
+  },
+  {
+    id: 8,
+    type: "ghazal",
+    poet: " آصف خان علیگ ",
+    title: "تیرے ہونے سے کیا ہوتا تیرے ہونے کے بعد کیا ہوگا",
+    couplets: [
+      {
+        lines: [
+          "تیرے ہونے سے کیا ہوتا تیرے ہونے کے بعد کیا ہوگا",
+          "تو نہ ہوتا تو کیا ہوتا، تیرے نہ ہونے پہ کیا ہوگا",
+        ],
+      },
+      {
+        lines: [
+          "جو تصور میں زنداں ہے انہیں دیکھنے کی ضرورت نہیں",
+          "نہ جو حاصل ہوا تو کیا؟ جب حاصل ہوگا تو کیا ہوگا؟",
+        ],
+      },
+      {
+        lines: [
+          "اضطراب میں ہوں کیا اب بھی میں مضطر نہیں؟",
+          "تو جب ملا نہیں تو یہ حال، تیرے ملنے پر کیا ہوگا",
+        ],
+      },
+      {
+        lines: [
+          "تمہیں اپنی نیکیوں پر بہت غرور ہے، بہت مغرور ہو تم",
+          "تمسخر اڑا لو سرِ محفل یہاں، وہاں تمہارا بھی جزا ہوگا",
+        ],
+      },
+      {
+        lines: [
+          "تمسخر اڑاتے ہیں کچھ فریشتے سرِ محفل میری آصف",
+          "کیا مغفور ہو چکے ہیں سب؟ کیا ان کا نہیں جزا ہوگا؟",
+        ],
+      },
+    ],
+    audioUrl: null,
+  },
+  {
+    id: 9,
+    type: "ghazal",
+    poet: " آصف خان علیگ ",
+    title: "ایک مدت تک تو تم نے بھی وہی کیا جو سب نے کیا",
+    couplets: [
+      {
+        lines: [
+          "ایک مدت تک تو تم نے بھی وہی کیا جو سب نے کیا",
+          "پھر کیوں کر تمہیں ان سے الگ سمجھا جائے",
+        ],
+      },
+      {
+        lines: [
+          "اب نہیں کرتا میں تعریف کسی شخص کا کبھی",
+          "کیوں بلاوجہ کسی کو فرعون بنایا جائے",
+        ],
+      },
+      {
+        lines: [
+          "ایسا نہیں ہے کہ حلقۂ احباب میں قابلِ تعریف نہیں",
+          "کیوں بلاوجہ ان کو مغرور کیا جائے",
+        ],
+      },
+      {
+        lines: [
+          "تمہیں معلوم ہے میں اس کا مخالف ہوں ہمیشہ سے",
+          "کیوں کر کسی کو جبراً اپنا بنایا جائے",
+        ],
+      },
+      {
+        lines: [
+          "وہ تو تم تھے کہ بضد تھے اس بات کے، ورنہ",
+          "لوگ کہتے ہیں انجمن میں کیوں اس کو بلایا جائے",
+        ],
+      },
+      {
+        lines: [
+          "اپنے اصولوں کا پابند رہا تھا ہمیشہ سے مگر",
+          "متصل تھے یہ اصول بھی تجھ سے، اب ان کو توڑ دیا جائے",
+        ],
+      },
+      {
+        lines: [
+          "جاؤ خوش رہو تم بھی کسی اور کے ساتھ",
+          "وہ وعدے کہنے کے تھے، کیا تمہیں یاد دلایا جائے",
+        ],
+      },
+      {
+        lines: [
+          "ہم تو پہلے بھی کسی کے نہ تھے اور اب بھی نہیں",
+          "خدا توفیق دے، مجھ سے تیرا رشتہ بھلایا جائے",
+        ],
+      },
+      {
+        lines: [
+          "اس کے ہنسنے پر موقوف تھی میری ہنسی اے سائل",
+          "اب نہیں طاقت مجھ میں کہ رنجیدہ و سنجیدہ ہوا جائے",
+        ],
+      },
+      {
+        lines: [
+          "کیوں کر اپنی آنکھوں کو نیچے کرتے ہو، بصیر",
+          "ہم تو اب دیکھے بھی نہیں تم کو، کی شرم کیا جائے",
+        ],
+      },
+      {
+        lines: [
+          "میں مدتوں تک تو باعثِ مسرت بنا رہا مگر آصف",
+          "پھر اُس نے کہنا کہ تم وہ نہیں جس سے پیار کیا جائے",
+        ],
+      },
+    ],
+    audioUrl: null,
+  },
+  {
+    id: 10,
+    type: "ghazal",
+    poet: " آصف خان علیگ ",
+    title: "تیری آنکھیں بھی کیا قیامت ہے",
+    couplets: [
+      {
+        lines: [
+          "تیری آنکھیں بھی کیا قیامت ہے",
+          "کیا اس قیامت کو بھی کوئی قیامت ہوگی؟",
+        ],
+      },
+      {
+        lines: [
+          "سب کو بابرکت رکھتی ہے ہر دم تیری آنکھیں",
+          "کیا اس ناچیز پر بھی کبھی کوئی نظرِ عنایت ہوگی؟",
+        ],
+      },
+      {
+        lines: [
+          "مثلِ جھیل تو بہت سی ہیں آنکھیں لیکن",
+          "اس جھیلِ مثل بھی کیا کوئی آنکھیں ہوگی؟",
+        ],
+      },
+      {
+        lines: [
+          "میں تو کوئی بات کہنے گیا تھا اس روز",
+          "کیا کبھی کوئی اس سے مکمل بات کہی ہوگی؟",
+        ],
+      },
+      {
+        lines: [
+          "ہم آزاد کہاں ہیں ہاں مگر قفس زدہ ہیں لیکن اے حاکم",
+          "کیا اس قاتل پر بھی کوئی سزا عائد ہوگی؟",
+        ],
+      },
+      {
+        lines: [
+          "ایک شکایت رہی ہے ہمیشہ، اس کی بے حجاب آنکھیں",
+          "کیا دیکھنے کی اجازت کبھی مجھ کو ہوگی؟",
+        ],
+      },
+      {
+        lines: [
+          "اس کی باتیں تو بھول جاتی ہیں مگر اے ساقی",
+          "کیا اس کی نظر کو بھولنے کی کبھی مجھ میں قوت ہوگی؟",
+        ],
+      },
+      {
+        lines: [
+          "ہر چیز کی متبادل ہے یہاں پر لیکن اے زاہد",
+          "کیا اس کی آنکھوں کی بھی کوئی شے متبادل ہوگی؟",
+        ],
+      },
+      {
+        lines: [
+          "جس کے پاس ہو ایسی اشارے کی قدرت",
+          "اسے کیا کوئی بات زباں سے کہنے کی ضرورت ہوگی؟",
+        ],
+      },
+      {
+        lines: [
+          "وہ کہتی تو نہیں ہے زباں سے مگر لیکن آصف",
+          "اس شراب کے بعد کیا کبھی کسی کو ہوش رہی ہوگی؟",
+        ],
+      },
+    ],
+    audioUrl: null,
+  },
+  {
+  id: 11,
+  type: "ghazal",
+  poet: " آصف خان علیگ ",
+  title: "اس گلی میں آتے بھی نہیں ہو مجھ سے ملنے لیکن",
+  couplets: [
+    {
+      lines: [
+        "اس گلی میں آتے بھی نہیں ہو مجھ سے ملنے لیکن",
+        "کسی سے سہی مل لو تاکہ میں کسی سے تم کو ملتا دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "دل تو ارادہ کرتا ہے کہ پھر سے تجھ کو دیکھوں",
+        "ترک کر دیتا ہوں کیا تجھے کسی کا ہوتے ہوئے دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "لاکھ کہتا ہوں میں کہ تجھے بھول گیا ہوں لیکن سائل",
+        "جب بھول گیا ہو تو پھر کیوں یہ بات کہ بھولا ہوا دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "اس کو سوچتے ہی عجب سا حال ہو جاتا ہے میرا",
+        "خواہش ہے میں کبھی خود کو اس سوچ سے نکلتا دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "اس کا ملنا تو محال تھا ازل سے مگر اے زاہد",
+        "گر ممکن ہو تو خواب میں خود کو اس سے ملتا دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "میں تو اس قابل بھی نہیں کہ کوئی مجھ کو دیکھے",
+        "اس کی ضد تھی کہ ناممکن کو ممکن ہوتا دیکھو",
+      ],
+    },
+    {
+      lines: [
+        "بہت خوبصورت منظر دیکھا ہے اس رنگین دنیا میں مگر",
+        "خواہش ہی رہی کہ اپنوں کو بچھڑ کر پھر سے ملتا دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "یہ رشتے بھی کیا چیز ہیں کچھ سمجھ نہیں آتی مجھ کو",
+        "وہ دن بھی آئیں گے کیا کسی اپنے کو اپنوں سے ملتا دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "کیا کبھی ٹوٹیں گے یہ بنائے ہوئے خود ساختہ اصول ان کے",
+        "کیا ممکن ہوگا ان پابندیوں سے آزاد میں خود کو دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "وہ منظر ابھی بھی میری آنکھوں کے سامنے ہے اے زاہد",
+        "ڈوبتے سورج کو کیوں کر میں پھر سے ابھرتا دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "اس سے بچھڑنے کے بعد کیا کچھ نہ حاصل کر لیا میں نے مگر",
+        "سکونِ قلب کی خواہش ہے جو مرنے سے قبل ملتا دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "دیکھا ہے خواب میں نے اپنے گھر کو جلتے ہوئے اے زاہد",
+        "تعبیر مل جائے کہیں سے تاکہ میں خود کو سنبھالتا دیکھوں",
+      ],
+    },
+    {
+      lines: [
+        "مجھے ان درختوں کی فکر ہے آصف جو مجھ جیسے ہیں",
+        "مرجھانے کے بعد پھر سے انہیں پھلتا اور پھولتا دیکھوں",
+      ],
+    },
+  ],
+  audioUrl: null,
+},
+{
+  id: 12,
+  type: "ghazal",
+  poet: " آصف خان علیگ ",
+  title: "ایک وہ شخص تھا جب میسر تھا مجھے",
+  couplets: [
+    {
+      lines: [
+        "ایک وہ شخص تھا جب میسر تھا مجھے",
+        "کسی چیز کے ملنے کی نہیں خواہش کی",
+      ],
+    },
+    {
+      lines: [
+        "اس سے بچھڑنے کے بعد ہر شے میسر ہے مجھے مگر",
+        "ہر روز میرے دل نے نئی چیز کی خواہش کی",
+      ],
+    },
+    {
+      lines: [
+        "مل تو لیتا ہوں ہر شخص سے دل کھول کر مگر",
+        "اب نہیں کبھی کسی سے دوبارہ ملنے کی فرمائش کی",
+      ],
+    },
+    {
+      lines: [
+        "تم نے پوچھا تھا کتنی عزت کرتے ہو میرا",
+        "اتنی کی جتنی کبھی تم نے نہیں خود کی عزت کی",
+      ],
+    },
+    {
+      lines: [
+        "محشر میں ملیں گے اب تم سے اس گِلہ کے ساتھ",
+        "کیا کمی تھی جو ان لوگوں نے ہمیں نہیں ملنے دی",
+      ],
+    },
+    {
+      lines: [
+        "تیری دعا ہے کہ شاید حیات ہوں ورنہ",
+        "کیا کچھ نہ قریب سے میں نے دیکھی",
+      ],
+    },
+    {
+      lines: [
+        "تم بھی کہیں مصروف ہو گئے اور ہم بھی کہیں",
+        "شاید یہی ہے وہ حقیقت کسی نے ہم سے کہی تھی",
+      ],
+    },
+    {
+      lines: [
+        "یہ مصروفیت بھی اللہ کی نعمت ہے آصف",
+        "جو مصروف نہ ہوتے تو کیا خبر کہیں عشق لڑی ہوتی",
+      ],
+    },
+  ],
+  audioUrl: null,
+},
+{
+  id: 13,
+  type: "sher",
+  poet: " آصف خان علیگ ",
+  title: null,
+  couplets: [
+    {
+      lines: [
+        "ہمیں کون پوچھتا ہے اس زمانے میں آصف",
+        "جب یہاں لوگ خدا کو بھولے بیٹھے ہیں",
+      ],
+    },
+  ],
+  audioUrl: null,
+},
+{
+  id: 14,
+  type: "sher",
+  poet: " آصف خان علیگ ",
+  title: null,
+  couplets: [
+    {
+      lines: [
+        "ہم تو چپ بھی کھڑے رہ کر بھی چپ نہیں رہتے",
+        "اور وہ بول بھی دیتے ہیں مگر کوئی انہیں بولتا نہیں",
+      ],
+    },
+  ],
+  audioUrl: null,
+},
+{
+  id: 15,
+  type: "sher",
+  poet: " آصف خان علیگ ",
+  title: null,
+  couplets: [
+    {
+      lines: [
+        "ہم تو کہیں بھی چلے جائیں گے مگر لیکن آصف",
+        "وہ جو اُدھر آ جائیں گے تو ہم کدھر جائیں گے",
+      ],
+    },
+  ],
+  audioUrl: null,
+},
+{
+  id: 16,
+  type: "sher",
+  poet: " آصف خان علیگ ",
+  title: null,
+  couplets: [
+    {
+      lines: [
+        "کبھی تو یوں لگتا ہے کچھ نہیں حاصل مجھ کو",
+        "کبھی ایسا لگتا ہے کہ ہم سا کوئی خوش نصیب نہیں",
+      ],
+    },
+  ],
+  audioUrl: null,
+},
+{
+  id: 17,
+  type: "sher",
+  poet: " آصف خان علیگ ",
+  title: null,
+  couplets: [
+    {
+      lines: [
+        "پارسا وہی ہے آصف جو تنہائی میں پارسا ہے",
+        "ورنہ تو ہر شخص بنتا پھرتا ہے نیک یہاں",
+      ],
+    },
+  ],
+  audioUrl: null,
+},
+{
+  id: 18,
+  type: "ghazal",
+  poet: " آصف خان علیگ ",
+  title: "شرمندہ ہوں کہ خاموش کھڑا ہوں میں",
+  couplets: [
+    {
+      lines: [
+        "شرمندہ ہوں کہ خاموش کھڑا ہوں میں",
+        "مقتدا بن کر بھی مقتدی بنے بیٹھے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "اپنے شب و روز لگا دیے کچھ اپنی فکر نہ کی",
+        "ہم ہیں کہ تاویل پر تاویل کیے بیٹھے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "تیرے نواسے نے تو اس دین کے لیے جان بھی دے دی",
+        "ہم ہیں کہ ان عظیم سانحوں کو بھی بھلا بیٹھے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "کیا کہوں اس ناقص علم پر بھی میں عمل پیرا نہیں",
+        "ہم ہیں کہ جو فرائض تک کو بھلا بیٹھے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "بس تقدیر پر ڈال رکھی ہے اپنی ساری تدبیر",
+        "اسی تدبیر کے سہارے ہم منتظر بیٹھے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "کچھ جذبات میں آتے ہیں تیرے دیوانے کبھی",
+        "وہ جیل کی سلاخوں میں بے بس بیٹھے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "یا خدا اب انہیں دے بھی کوئی عمرؓ جیسا رہنما",
+        "وہ اس آس میں کیا کچھ نہیں کر بیٹھے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "اس قوم کو کیا ہو گیا ہے، ان میں الفت پیدا کر",
+        "سب ایک دوسرے کے دل میں نفرت لیے بیٹھے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "ہم گنہگار کی ذرا جرأت تو دیکھو، آصفؔ",
+        "اس کے بعد بھی ہم جنت کی آس لیے بیٹھے ہیں",
+      ],
+    },
+  ],
+  audioUrl: null,
+},
+
+{
+  id: 19,
+  type: "ghazal",
+  poet: " آصف خان علیگ ",
+  title: "خود کو خود میں ہی چھپا لیتے ہیں",
+  couplets: [
+    {
+      lines: [
+        "خود کو خود میں ہی چھپا لیتے ہیں",
+        "ہم تو وہ ہیں جو غیروں کو بھی اپنا بنا لیتے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "ہر بار یہی قصہ بین ہجر و قربت میں ہوتا ہے",
+        "ہم تو وہ ہیں جو دشمن کو بھی اپنا بنا لیتے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "کرتے تو ہیں محبت وہ مجھ سے یہ معلوم ہے ہمیں",
+        "خوفِ دنیا کی وجہ سے پھر اس کو چھپا لیتے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "کیا بات کروں سچ سننے کی عادت نہیں رہی",
+        "اسی وجہ سے ہم خود سے ہم کلام ہوا کرتے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "کیا کر لیا ہے حاصل جو اتنا بڑے بنتے ہو",
+        "میرا رب تو پرندوں کو بھی رزق عطا کرتا ہے",
+      ],
+    },
+    {
+      lines: [
+        "نہیں حاجت ہے اب کسی اور کی ہمیں",
+        "اس سے بچھڑنے پر ہم سب کو یہی کہا کرتے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "ویسے تو اب جینے کی خواہش نہیں رہی",
+        "کچھ اپنوں کی خوشی کے لیے اب ہم جیا کرتے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "وہ تو چپ ہو کر بھی کلام کرتا رہتا ہے",
+        "کچھ ایسے بھی ہیں احباب جو خود سے کلام کرتے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "کچھ ایسے بھی محسن ہیں کہ ان کا حال نہ پوچھو",
+        "کر کے احسان کسی پر پھر اس کو جتلا دیتے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "بہت پریشان کر دیا ہوں توبہ کے وردوں سے",
+        "میرے قرین لکھتے ہیں پھر اس کو مٹا دیتے ہیں",
+      ],
+    },
+    {
+      lines: [
+        "بہت محبت کرتے ہیں میرے چاہنے والے آصف",
+        "مجھ سے فائدہ اٹھا کر مجھے ہی راستے سے ہٹا دیتے ہیں",
+      ],
+    },
+  ],
+  audioUrl: null,
+},
+
+
+        
+        
+        
+      ];
+
+      let currentFilter = "all";
+      let currentShareText = "";
+
+      // Render Poetry Cards
+      function renderPoetry(filter = "all", searchTerm = "") {
+        const grid = document.getElementById("poetryGrid");
+        const noResults = document.getElementById("noResults");
+
+        let filteredData = poetryData;
+
+        // Filter by type
+        if (filter !== "all") {
+          filteredData = filteredData.filter((item) => item.type === filter);
+        }
+
+        // Filter by search term
+        if (searchTerm) {
+          filteredData = filteredData.filter((item) => {
+            const searchLower = searchTerm.toLowerCase();
+            const poetMatch = item.poet.toLowerCase().includes(searchLower);
+            const titleMatch = item.title.toLowerCase().includes(searchLower);
+            const contentMatch = item.couplets.some((couplet) =>
+              couplet.lines.some((line) =>
+                line.toLowerCase().includes(searchLower)
+              )
+            );
+            return poetMatch || titleMatch || contentMatch;
+          });
+        }
+
+        // Show/hide no results message
+        if (filteredData.length === 0) {
+          grid.innerHTML = "";
+          noResults.classList.add("active");
+          return;
+        } else {
+          noResults.classList.remove("active");
+        }
+
+        // Render cards
+        grid.innerHTML = filteredData
+          .map(
+            (item, index) => `
+                <div class="poetry-card">
+                    <div class="card-header">
+                        <span class="poet-name">${item.poet}</span>
+                        <span class="poetry-type">${getTypeLabel(
+                          item.type
+                        )}</span>
+                    </div>
+                    ${
+                      item.title
+                        ? `<div class="poetry-title">${item.title}</div>`
+                        : ""
+                    }
+                    <div class="poetry-content">
+                        ${item.couplets
+                          .map(
+                            (couplet, cIndex) => `
+                            <div class="couplet">
+                                ${couplet.lines
+                                  .map(
+                                    (line) => `
+                                    <div class="line">${line}</div>
+                                `
+                                  )
+                                  .join("")}
+                            </div>
+                        `
+                          )
+                          .join("")}
+                    </div>
+                    <div class="card-footer">
+                        <button class="action-btn" onclick="sharePoetry(${
+                          item.id
+                        })">
+                            📤 شئیر
+                        </button>
+                        ${
+                          item.audioUrl
+                            ? `
+                            <button class="action-btn" onclick="toggleAudio(${item.id})">
+                                🎵 آڈیو
+                            </button>
+                        `
+                            : ""
+                        }
+                    </div>
+                    ${
+                      item.audioUrl
+                        ? `
+                        <div class="audio-player" id="audio-${item.id}">
+                            <audio controls src="${item.audioUrl}"></audio>
+                        </div>
+                    `
+                        : ""
+                    }
+                </div>
+            `
+          )
+          .join("");
+      }
+
+      function getTypeLabel(type) {
+        const labels = {
+          ghazal: "غزل",
+          nazm: "نظم",
+          sher: "شعر",
+        };
+        return labels[type] || type;
+      }
+
+      // Filter buttons
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+          currentFilter = this.dataset.filter;
+          renderPoetry(
+            currentFilter,
+            document.getElementById("searchInput").value
+          );
+        });
+      });
+
+      // Search functionality
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function (e) {
+          renderPoetry(currentFilter, e.target.value);
+        });
+
+      // Share Poetry
+      function sharePoetry(id) {
+        const item = poetryData.find((p) => p.id === id);
+        if (!item) return;
+
+        let shareContent = `${item.poet}${
+          item.title ? ` - ${item.title}` : ""
+        }\n\n`;
+        shareContent += item.couplets
+          .map((c) => c.lines.join("\n"))
+          .join("\n\n");
+
+        currentShareText = shareContent;
+        document.getElementById("shareText").textContent = shareContent;
+        document.getElementById("shareModal").classList.add("active");
+      }
+
+      function closeModal() {
+        document.getElementById("shareModal").classList.remove("active");
+      }
+
+      function copyToClipboard() {
+        navigator.clipboard.writeText(currentShareText).then(() => {
+          alert("کاپی ہو گیا!");
+          closeModal();
+        });
+      }
+
+      function shareOnWhatsApp() {
+        const url = `https://wa.me/?text=${encodeURIComponent(
+          currentShareText
+        )}`;
+        window.open(url, "_blank");
+      }
+
+      function shareOnTwitter() {
+        const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          currentShareText
+        )}`;
+        window.open(url, "_blank");
+      }
+
+      // Toggle Audio
+      function toggleAudio(id) {
+        const audioPlayer = document.getElementById(`audio-${id}`);
+        if (audioPlayer) {
+          audioPlayer.classList.toggle("active");
+        }
+      }
+
+      // Close modal on outside click
+      document
+        .getElementById("shareModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeModal();
+          }
+        });
+
+      // Initial render
+      renderPoetry();
+
+      // Function to add new poetry (you can call this to add more entries)
+      function addPoetry(newPoem) {
+        poetryData.push({
+          ...newPoem,
+          id: poetryData.length + 1,
+        });
+        renderPoetry(
+          currentFilter,
+          document.getElementById("searchInput").value
+        );
+      }
+
+      // Example of how to add new poetry:
+      // addPoetry({
+      //     type: 'ghazal',
+      //     poet: 'شاعر کا نام',
+      //     title: 'عنوان',
+      //     couplets: [
+      //         { lines: ['پہلا مصرع', 'دوسرا مصرع'] },
+      //         { lines: ['تیسرا مصرع', 'چوتھا مصرع'] }
+      //     ],
+      //     audioUrl: null  // or 'path/to/audio.mp3'
+      // });
+    </script>
+  </body>
+</html>
